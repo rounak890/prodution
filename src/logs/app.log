@@ -1,0 +1,15 @@
+2024-08-30 03:02:46.331 | INFO     | model.pipeline.models:build_model:13 - starting up model building pipeline
+2024-08-30 03:02:46.331 | INFO     | model.pipeline.preparation:prepare_data:9 - start up preprocessing pipeline
+2024-08-30 03:02:46.331 | INFO     | model.pipeline.collection:load_data_from_db:15 - extracting the table from databse
+2024-08-30 03:02:46.350 | INFO     | model.pipeline.preparation:encode_cat_cols:22 - Encoding categorical columns :['balcony', 'parking', 'furnished', 'garage', 'storage']
+2024-08-30 03:02:46.350 | INFO     | model.pipeline.preparation:parse_garden_col:31 - parsing garden column
+2024-08-30 03:02:53.173 | INFO     | model.pipeline.models:get_xy:40 - defining X and y variables.
+ X vars : ['area', 'constraction_year', 'bedrooms', 'garden', 'balcony_yes', 'parking_yes', 'furnished_yes', 'garage_yes', 'storage_yes'] || y vars : rent
+2024-08-30 03:02:53.173 | INFO     | model.pipeline.models:train_model:44 - Training the model with hyperparameter tunning
+2024-08-30 03:03:18.165 | INFO     | model.pipeline.models:evaluate_model:59 - Evaluating the model's performance SCORE : 0.6164769255954334
+2024-08-30 03:03:18.165 | INFO     | model.pipeline.models:save_model:64 - Saving a model to directory : src\model\models/rf__db_v2
+2024-08-30 03:03:18.199 | INFO     | __main__:main:7 - running the application
+2024-08-30 03:03:18.199 | INFO     | model.model_service:load_model:15 - Checking if the model exsists at src\model\models/rf__db_v2
+2024-08-30 03:03:18.199 | INFO     | model.model_service:load_model:22 - model exsist -> loading model config file
+2024-08-30 03:03:18.251 | INFO     | model.model_service:predict:26 - predicting
+2024-08-30 03:03:18.268 | INFO     | __main__:main:12 - PREDICTION : [1952.47548706]
