@@ -1,0 +1,41 @@
+# this is our gihthub actions code
+
+name : App workflow
+
+on :
+    push:
+        branches : ['main']
+
+    pull_request:
+        branches : ['main']
+
+permissions:
+    contents : read
+
+jobs:
+    build:
+        runs-on : ubuntu-latest
+
+        steps: 
+          - name : checkout repository
+            uses : actions/checkout@v4
+            # run : git clone https://github.com/rounak890/prodution.git . Instead of this command we will use prbuilt actions
+
+          - name : setup python # since in basic ubuntu machine its absent
+            uses : actions/setup-python@v5 
+            with : 
+                python-version : '3.12.0'
+
+            #sSL - silent errors, shw errors, redirect
+          - name : install poetry
+            run: 
+                curl -sSL https://install.python-poetry.org | python3- 
+                export PATH = $HOME/.local\bin:$PATH  # adds poetry to Path of system
+
+          - name : install dependencies using poetry
+            run : poetry run make install
+
+          - name : lint with flake8
+            run : poetry run make check
+            
+            
