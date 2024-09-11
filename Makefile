@@ -10,6 +10,6 @@ install: pyproject.toml # check for the availabilty of 'pyproject.toml' file if 
 clean: rm -rf `find . -type d -name __pycache__` # above is the bash cmd to remove all pycache folders
 
 check:
-	flake8 src/runner.py # if flake8 tell any violations then it will stop execution
+	flake8 src/config/__init__.py # if flake8 tell any violations then it will stop execution
 
 runner: check run clean # this is the pipeline which first do run then clean
