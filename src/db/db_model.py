@@ -27,3 +27,4 @@ class RentApartments(Base):
     zip : Mapped[str] =  mapped_column(VARCHAR())
     neighborhood : Mapped[str] =  mapped_column(VARCHAR())
     rent : Mapped[int] =  mapped_column(INTEGER())
+    
