@@ -4,6 +4,7 @@ run: install  # by defaukt executed since its first
 	cd src; python runner.py # in one line bcoz we want to treat it as one not 2 seperate
 
 install: pyproject.toml # check for the availabilty of 'pyproject.toml' file if exsisst the run else stop
+		 poetry lock [--no-update]
 		 poetry install
 
 clean: rm -rf `find . -type d -name __pycache__` # above is the bash cmd to remove all pycache folders
