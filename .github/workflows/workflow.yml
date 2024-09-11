@@ -35,6 +35,7 @@ jobs:
       - name: Install Poetry
         uses: snok/install-poetry@v1
 
+        
       # - name: Install Poetry
       #   run: |
       #     curl -sSL https://install.python-poetry.org | python3 -  # Fixed the command
